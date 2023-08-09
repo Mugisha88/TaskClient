@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+   <meta charset="UTF-8"/>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <title>TASK MANAGEMENT</title>
+
+   <!-- swiper css link  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../assets/book/css/style.css"/>
+
+</head>
+<body>
+   
+<!-- header section starts  -->
+
+<section class="header">
+
+   <a href="Home" class="logo"> TASK MANAGEMENT</a>
+
+
+   <div id="menu-btn" class="fas fa-bars"></div>
+
+</section>
+
+
+<!-- booking section starts  -->
+
+<section class="booking">
+
+       <h:form class="book-form" enctype="multipart/form-data" prependId="false">
+
+      <div class="flex">
+         <div class="inputBox">
+            <span>Title :</span>
+            <h:inputText a:placeholder="enter title" value="#{BB.task.title}" />
+         </div>
+         <div class="inputBox">
+            <span>Start date :</span>
+            <input type="date" value="#{BB.task.startDate}"/>
+         </div>
+          <div class="inputBox">
+            <span>End date :</span>
+            <input type="date" value="#{BB.task.endDate}"/>
+         </div>
+         <div class="inputBox">
+            <span>Assignee</span>
+            <h:selectOneMenu value="#{BB.assigneeID}">
+                <f:selectItems value="#{BB.allAssignees}" var="r" itemLabel="#{r.names}" itemValue="#{r.id}"/>
+            </h:selectOneMenu>
+         </div>
+          <div class="inputBox">
+            <span>Projects</span>
+            <h:selectOneMenu class="form-control" value="#{BB.projectID}"  converter="javax.faces.Integer">
+                <f:selectItems value="#{BB.allProjects}" var="r" itemLabel="#{r.title}" itemValue="#{r.id}"/>
+                </h:selectOneMenu>
+         </div>
+          <div class="inputBox">
+            <span>Description:</span>
+            <h:inputText a:placeholder="enter title" value="#{BB.task.description}" />
+         </div>
+          <div class="inputBox">
+            <span>Priority :</span>
+            <h:selectOneRadio value="#{BB.task.priority}">
+                            <f:selectItem itemValue="Low" itemLabel="Low"  />
+                        <f:selectItem itemValue="Normal" itemLabel="Normal"/>
+                        <f:selectItem itemValue="High" itemLabel="High"/>
+            </h:selectOneRadio>
+         </div>
+          <div class="inputBox">
+            <span>Attach File :</span>
+            <h:inputFile id="file" value="#{BB.task.file}">
+            </h:inputFile>
+         </div>
+      </div>
+
+           <h:commandButton value="Save" action="#{BB.createTask()}" class="ibtn">
+      </h:commandButton>
+
+   </h:form>
+</section>
+
+<!-- booking section ends -->
+
+</body>
+</html>

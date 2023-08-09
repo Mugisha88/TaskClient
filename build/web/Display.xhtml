@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div class="container my-6">
+            <h3>Tasks List</h3>             <a href="Home.xhtml">Add New Tasks</a>
+            <h:dataTable value="#{BB.allTasks}" var="cy" class="table table-striped ">
+                        <h:column>
+                            <f:facet  name="header">Title</f:facet>
+                            <h:outputText value="${cy.title}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet  name="header">Description</f:facet>
+                            <h:outputText value="${cy.description}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet  name="header">Priority</f:facet>
+                            <h:outputText value="${cy.priority}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet  name="header">Project</f:facet>
+                            <h:outputText value="${cy.projects.title}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet  name="header">Assigne</f:facet>
+                            <h:outputText value="${cy.assignees.names}"></h:outputText>
+                        </h:column>
+                    </h:dataTable>
+
+        </div>
+    </h:body>
+</html>

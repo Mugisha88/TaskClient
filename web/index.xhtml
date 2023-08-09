@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>TASK MANAGEMENT</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers"/>
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media"/>    
+    <link rel="shortcut icon" href="favicon.ico"/> 
+    
+    <!-- FontAwesome JS-->
+    <script src="assets/landing/assets/plugins/fontawesome/js/all.min.js"></script>
+    
+    <!-- App CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/landing/assets/css/portal.css"/>
+
+</h:head> 
+
+<h:body class="app app-login p-0">    	
+    <div class="row g-0 app-auth-wrapper">
+	    <div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
+		    <div class="d-flex flex-column align-content-end">
+			    <div class="app-auth-body mx-auto">	
+
+					<h2 class="auth-heading text-center mb-5">Log in to Task Management</h2>
+			        <div class="auth-form-container text-start">
+						<h:form class="auth-form login-form">         
+							<div class="email mb-3">
+								<label class="sr-only" for="signin-email">Email</label>
+                                                                <h:inputText a:placeholder="Enter Email" value="#{BB.user.email}" id="signin-email"  class="form-control signin-email" required="required"/>
+							</div><!--//form-group-->
+							<div class="password mb-3">
+								<label class="sr-only" for="signin-password">Password</label>
+                                                                <h:inputSecret a:placeholder="Enter password" value="#{BB.user.password}" id="signin-password"  class="form-control signin-password"  required="required"/>
+								
+							</div><!--//form-group-->
+							<div class="text-center">
+                                                            <h:commandButton class="btn app-btn-primary w-100 theme-btn mx-auto" action="#{BB.aunthenticate()}" value="Login" />
+							</div>
+						</h:form>
+						
+						
+					</div><!--//auth-form-container-->	
+
+			    </div><!--//auth-body-->
+		    
+			    <footer class="app-auth-footer">
+				    <div class="container text-center py-3">
+				         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+			        
+				       
+				    </div>
+			    </footer><!--//app-auth-footer-->	
+		    </div><!--//flex-column-->   
+	    </div><!--//auth-main-col-->
+	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
+		    <div class="auth-background-holder">
+		    </div>
+		    <div class="auth-background-mask"></div>
+		    <div class="auth-background-overlay p-3 p-lg-5">
+			    <div class="d-flex flex-column align-content-end h-100">
+				    <div class="h-100"></div>
+				    <div class="overlay-content p-3 p-lg-4 rounded">
+					    <h5 class="mb-3 overlay-title">Explore More after Login</h5>
+					    
+				    </div>
+				</div>
+		    </div><!--//auth-background-overlay-->
+	    </div><!--//auth-background-col-->
+    
+    </div><!--//row-->
+
+
+</h:body>
+</html> 
+
